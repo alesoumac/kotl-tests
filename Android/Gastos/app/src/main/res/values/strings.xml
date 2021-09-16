@@ -9,4 +9,6 @@
     <string name="moeda_valor">R$ 0,00</string>
     <string name="gasto_total">Seu gasto total será de:</string>
     <string name="calcular">CALCULAR</string>
+    <string name="msg_autonomia_nao_zero">Autonomia não pode ser zero</string>
+    <string name="msg_preencher_todos_parametros">É necessário preencher os parâmetros de cálculo com valores válidos</string>
 </resources>

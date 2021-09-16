@@ -32,9 +32,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val distancia: Float = edtDistancia.text.toString().toFloat()
                 val preco: Float = edtPreco.text.toString().toFloat()
                 var totalValue: Float
-                if (auto.equals(0)) {
+                if (auto.compareTo(0) == 0 ) {
                     totalValue = 0.0F
-                    Toast.makeText(this, "Autonomia não pode ser zero", Toast.LENGTH_SHORT)
+                    Toast.makeText(this, getString(R.string.msg_autonomia_nao_zero), Toast.LENGTH_SHORT).show()
                 }
                 else {
                     totalValue = distancia * preco / auto
@@ -42,10 +42,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 lblValor.text = "R$ ${"%.2f".format(totalValue)}"
             }
             else {
-                Toast.makeText(this, "É necessário preencher os parâmetros de cálculo com valores válidos", Toast.LENGTH_LONG)
+                Toast.makeText(this, getString(R.string.msg_preencher_todos_parametros), Toast.LENGTH_LONG).show()
             }
         } catch (exc: Exception) {
-            Toast.makeText(this, "ERRO: ${exc.toString()}", Toast.LENGTH_SHORT)
+            Toast.makeText(this, "ERRO: ${exc.toString()}", Toast.LENGTH_SHORT).show()
         }
     }
     private fun validationOK(): Boolean {
